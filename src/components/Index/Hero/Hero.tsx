@@ -1,13 +1,21 @@
 import { Bebas_Neue } from 'next/font/google';
 
-function HeroPresentation() {
+interface HeroProps {
+  title: string;
+}
+
+function HeroPresentation({ ...props }: HeroProps) {
   return (
-    <div className='flex h-[656px] items-center justify-center bg-hero-pattern bg-auto'>
-      <h2 className='font-bebas text-[46px] text-white'>HIROSHIMA DRAGONFLIES</h2>
+    <div className='relative flex h-[656px] w-full items-center justify-center bg-hero-pattern bg-cover'>
+      <div className='absolute inset-0 bg-[#000000]/50' />
+      <h2 className='absolute font-bebas text-[46px] text-white'>{props.title}</h2>
     </div>
   );
 }
 
 export default function HeroContainer() {
-  return <HeroPresentation />;
+  const data: HeroProps = {
+    title: 'HIROSHIMA DRAGONFLIES',
+  };
+  return <HeroPresentation {...data} />;
 }
