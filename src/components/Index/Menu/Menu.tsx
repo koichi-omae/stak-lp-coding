@@ -10,7 +10,7 @@ interface MenuProps {
 
 function MenuPresentation({ ...props }: MenuProps) {
   return (
-    <div className='bg-[#181818] py-24 text-white'>
+    <div>
       <h2 className='text-center text-3xl font-bold'>{props.title}</h2>
       <p className='mt-5 text-center'>{props.text}</p>
       <div className='mt-16 flex items-center justify-center gap-11'>
