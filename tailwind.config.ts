@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['var(--font-noto-sans-jp)'],
+        bebas: ['Bebas Neue'],
       },
       transitionDuration: {
         '400': '400ms',
