@@ -15,6 +15,9 @@ const config: Config = {
       transitionDuration: {
         '400': '400ms',
       },
+      backgroundImage: {
+        'hero-pattern': "url('/img/hero-bg.png')",
+      },
     },
   },
   plugins: [],
