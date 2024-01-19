@@ -11,6 +11,9 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-noto-sans-jp)'],
       },
+      transitionDuration: {
+        '400': '400ms',
+      },
     },
   },
   plugins: [],
