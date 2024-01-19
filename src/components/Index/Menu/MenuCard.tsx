@@ -73,7 +73,7 @@ export function MenuCardPresentation({ ...props }: MenuCardProps) {
         </div>
       </div>
       <div className='mt-11 text-center'>
-        <button className='rounded-full border-4 border-white px-44 py-4 text-[20px] font-bold'>
+        <button className='rounded-full border-4 border-white px-44 py-4 text-[20px] font-bold hover:border-[#E94709] hover:bg-[#E94709] hover:text-white'>
           {props.btn.text}
         </button>
       </div>
