@@ -1,5 +1,5 @@
-import Image from 'next/image';
+import PageHeaderContainer from '@/components/Common/PageHeader';
 
 export default function Home() {
-  return <div>test</div>;
+  return <PageHeaderContainer />;
 }
