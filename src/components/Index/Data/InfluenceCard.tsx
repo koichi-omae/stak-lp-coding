@@ -11,7 +11,7 @@ export interface InfluenceCardProps {
 
 export default function InfluenceCardPresentation({ ...props }: InfluenceCardProps) {
   return (
-    <div className='rounded-lg bg-[#2B2B2B]'>
+    <div className='h-[376px] w-[348px] rounded-lg bg-[#2B2B2B]'>
       <Image
         src={props.image.src}
         alt={props.image.alt}
