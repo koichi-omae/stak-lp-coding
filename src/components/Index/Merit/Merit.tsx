@@ -8,7 +8,7 @@ interface MeritPresentationProps {
 
 function MeritPresentation({ ...props }: MeritPresentationProps) {
   return (
-    <div className='mt-24 text-center '>
+    <div id='merit' className='mt-24 text-center '>
       <h2 className='text-3xl font-bold'>{props.title}</h2>
       <p className='mt-5 text-base font-medium'>{props.text}</p>
       {props.boxes.map((box, index) => {

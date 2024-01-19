@@ -19,7 +19,7 @@ interface DataProps {
 
 function DataPresentation({ ...props }: DataProps) {
   return (
-    <div className='mt-44'>
+    <div id='data' className='mt-44'>
       <h2 className='text-3xl font-bold'>{props.title}</h2>
       <p className='mt-5 text-base font-medium'>{props.text}</p>
       <InfluencePresentation {...props.influences} />

@@ -1,10 +1,16 @@
 import Image, { ImageProps } from 'next/image';
+import Link from 'next/link';
 import LogoImage from '~/img/logo.png';
 
 interface PageHeaderProps {
   image: ImageProps;
   message: string;
-  menus: string[];
+  menus: MenuProps[];
+}
+
+interface MenuProps {
+  link: string;
+  text: string;
 }
 
 function PageHeaderPresentation({ ...props }: PageHeaderProps) {
@@ -21,10 +27,12 @@ function PageHeaderPresentation({ ...props }: PageHeaderProps) {
       </div>
       <ul className='flex items-center gap-14'>
         {props.menus.map((menu, index) => (
-          <li key={menu} className='group text-[16px] font-bold hover:cursor-pointer'>
-            {menu}
-            <span className='ml-2 inline-block duration-400 group-hover:rotate-90'>＞</span>
-          </li>
+          <Link key={menu.text} href={menu.link}>
+            <li className='group text-[16px] font-bold hover:cursor-pointer'>
+              {menu.text}
+              <span className='ml-2 inline-block duration-400 group-hover:rotate-90'>＞</span>
+            </li>
+          </Link>
         ))}
       </ul>
     </header>
@@ -40,7 +48,28 @@ export default function PageHeaderContainer() {
       height: 44,
     },
     message: '広島ドラゴンフライズ広告ページ',
-    menus: ['スポンサーメニュー', 'SNS広告の特徴', 'メリット', 'PICKUPメニュー', 'データ'],
+    menus: [
+      {
+        link: '#menu',
+        text: 'スポンサーメニュー',
+      },
+      {
+        link: '#feature',
+        text: 'SNS広告の特徴',
+      },
+      {
+        link: '#merit',
+        text: 'メリット',
+      },
+      {
+        link: '#pickup',
+        text: 'PICKUPメニュー',
+      },
+      {
+        link: '#data',
+        text: 'データ',
+      },
+    ],
   };
   return <PageHeaderPresentation {...data} />;
 }
