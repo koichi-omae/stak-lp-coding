@@ -1,3 +1,4 @@
+import PageFooterContainer from '@/components/Common/PageFooter';
 import PageHeaderContainer from '@/components/Common/PageHeader';
 import DataContainer from '@/components/Index/Data/Data';
 import FeatureContainer from '@/components/Index/Feature/Feature';
@@ -10,12 +11,13 @@ export default function Home() {
     <>
       <PageHeaderContainer />
       <HeroContainer />
-      <div className='bg-[#181818]  pt-24 text-center text-white'>
+      <div className='bg-[#181818] pb-56  pt-24 text-center text-white'>
         <MenuContainer />
         <FeatureContainer />
         <MeritContainer />
         <DataContainer />
       </div>
+      <PageFooterContainer />
     </>
   );
 }
