@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-noto-sans-jp)'],
+        sans: ['Noto Sans'],
+        'sans-jp': ['var(--font-noto-sans-jp)'],
         bebas: ['Bebas Neue'],
         condensed: ['DIN Condensed'],
       },
