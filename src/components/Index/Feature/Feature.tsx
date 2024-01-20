@@ -15,7 +15,7 @@ interface FeatureProps {
 function FeaturePresentation({ ...props }: FeatureProps) {
   return (
     <div id='feature' className='mt-44'>
-      <h2 className='text-center text-3xl font-bold'>{props.title}</h2>
+      <h2 className='text-center font-sans text-3xl font-bold'>{props.title}</h2>
       <p className='mt-5 text-center'>{props.text}</p>
       <div className='mt-16 flex items-center justify-center gap-11'>
         <div className='grid grid-cols-3 gap-7'>

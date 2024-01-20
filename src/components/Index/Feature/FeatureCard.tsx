@@ -9,12 +9,14 @@ export interface FeatureCardProps {
 
 export default function FeatureCardPresentation({ ...props }: FeatureCardProps) {
   return (
-    <div className=' flex h-[450px]  w-[348px] justify-normal rounded-xl border-2 border-white px-6'>
+    <div className=' flex h-[450px] w-[348px] justify-normal rounded-xl border-2 border-white px-6'>
       <div className='mt-10 text-center'>
-        <span className='inline-block rounded-full bg-white px-6 py-4 text-center text-3xl font-bold text-black'>
-          {props.index}
-        </span>
-        <h3 className='mt-4 text-2xl font-semibold'>{props.title}</h3>
+        <div className='flex justify-center'>
+          <span className='flex size-14 items-center justify-center rounded-full bg-white text-center text-3xl font-bold text-black'>
+            {props.index}
+          </span>
+        </div>
+        <h3 className='mt-4 font-sans text-2xl font-bold'>{props.title}</h3>
         <Image
           src={props.image.src}
           alt={props.image.alt}
@@ -22,7 +24,7 @@ export default function FeatureCardPresentation({ ...props }: FeatureCardProps) 
           height={props.image.height}
           className='mx-auto my-6'
         />
-        <p className='w-[300px] text-left font-medium '>{props.text}</p>
+        <p className='w-[300px] text-left font-medium'>{props.text}</p>
       </div>
     </div>
   );
