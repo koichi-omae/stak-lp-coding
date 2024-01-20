@@ -1,6 +1,6 @@
-import { useState } from 'react';
 import PickUpCardPresentation, { PickUpCardProps } from './PickUpCard';
 import { usePickUpModal } from '@/hooks/Index/Modal/PickUpModal';
+import { useSlide } from '@/hooks/Index/PickUp/useSlide';
 import Image3 from '~/img/hero-bg.png';
 import Image1 from '~/img/menu-card-1.png';
 import Image2 from '~/img/menu-card-2.png';
@@ -53,9 +53,7 @@ function PickUpSlideShowPresentation({ ...props }: PickUpSlideShowProps) {
 }
 
 export default function PickUpSlideShowContainer() {
-  const [currentSlide, setCurrentSlide] = useState(0);
   const { openPickUpModal } = usePickUpModal();
-
   const cards: PickUpCardProps[] = [
     {
       title: 'メニュータイトル1',
@@ -114,21 +112,7 @@ export default function PickUpSlideShowContainer() {
     },
   ];
 
-  const nextSlide = () => {
-    currentSlide === cards.length - 2
-      ? setCurrentSlide(0)
-      : setCurrentSlide((currentSlide + 1) % cards.length);
-  };
-
-  const prevSlide = () => {
-    (currentSlide - 1 + cards.length) % cards.length === cards.length - 1
-      ? setCurrentSlide(cards.length - 2)
-      : setCurrentSlide((currentSlide - 1 + cards.length) % cards.length);
-  };
-
-  const goToSlide = (index: number) => {
-    setCurrentSlide(index);
-  };
+  const { currentSlide, nextSlide, prevSlide, goToSlide } = useSlide(cards);
 
   const containerStyle = {
     transition: 'transform 0.5s ease',
