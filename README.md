@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## 環境構築
+
+```
+~ %git clone https://github.com/koichi-omae/stak-lp-coding.git
+
+~ %cd stak-lp-coding
+
+stak-lp-coding %yarn install
+
+stak-lp-coding %yarn dev
+```
 
 ## Getting Started
 
