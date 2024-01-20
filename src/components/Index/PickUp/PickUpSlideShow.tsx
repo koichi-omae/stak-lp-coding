@@ -1,7 +1,6 @@
-'use client';
-
 import { useState } from 'react';
 import PickUpCardPresentation, { PickUpCardProps } from './PickUpCard';
+import { usePickUpModal } from '@/hooks/Index/Modal/PickUpModal';
 import Image3 from '~/img/hero-bg.png';
 import Image1 from '~/img/menu-card-1.png';
 import Image2 from '~/img/menu-card-2.png';
@@ -9,7 +8,6 @@ import Image2 from '~/img/menu-card-2.png';
 interface PickUpSlideShowProps {
   index: number;
   cards: PickUpCardProps[];
-
   containerStyle?: React.CSSProperties;
   prevOnClick?: () => void;
   nextOnClick?: () => void;
@@ -38,7 +36,7 @@ function PickUpSlideShowPresentation({ ...props }: PickUpSlideShowProps) {
           ＞
         </button>
       </div>
-      j
+
       <div className='mt-9 flex items-center justify-center gap-3'>
         {props.cards.map((_, index) =>
           index === props.cards.length - 1 ? null : (
@@ -55,6 +53,9 @@ function PickUpSlideShowPresentation({ ...props }: PickUpSlideShowProps) {
 }
 
 export default function PickUpSlideShowContainer() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const { openPickUpModal } = usePickUpModal();
+
   const cards: PickUpCardProps[] = [
     {
       title: 'メニュータイトル1',
@@ -65,6 +66,7 @@ export default function PickUpSlideShowContainer() {
         height: 408,
       },
       text: 'メニューの補足が入ります。メニューの補足が入ります。',
+      onOpenModal: openPickUpModal,
     },
     {
       title: 'メニュータイトル2',
@@ -75,6 +77,7 @@ export default function PickUpSlideShowContainer() {
         height: 408,
       },
       text: 'メニューの補足が入ります。メニューの補足が入ります。',
+      onOpenModal: openPickUpModal,
     },
     {
       title: 'メニュータイトル3',
@@ -85,6 +88,7 @@ export default function PickUpSlideShowContainer() {
         height: 408,
       },
       text: 'メニューの補足が入ります。メニューの補足が入ります。',
+      onOpenModal: openPickUpModal,
     },
     {
       title: 'メニュータイトル4',
@@ -95,6 +99,7 @@ export default function PickUpSlideShowContainer() {
         height: 408,
       },
       text: 'メニューの補足が入ります。メニューの補足が入ります。',
+      onOpenModal: openPickUpModal,
     },
     {
       title: 'メニュータイトル5',
@@ -105,10 +110,9 @@ export default function PickUpSlideShowContainer() {
         height: 408,
       },
       text: 'メニューの補足が入ります。メニューの補足が入ります。',
+      onOpenModal: openPickUpModal,
     },
   ];
-
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   const nextSlide = () => {
     currentSlide === cards.length - 2
