@@ -25,10 +25,10 @@ function PageHeaderPresentation({ ...props }: PageHeaderProps) {
         />
         <span className=' text-xs'>{props.message}</span>
       </div>
-      <ul className='flex items-center gap-14'>
+      <ul className='flex items-center gap-9'>
         {props.menus.map((menu, index) => (
           <Link key={menu.text} href={menu.link}>
-            <li className='group text-[16px] font-bold hover:cursor-pointer'>
+            <li className='group font-sans-jp text-base font-bold hover:cursor-pointer'>
               {menu.text}
               <span className='ml-2 inline-block duration-400 group-hover:rotate-90'>＞</span>
             </li>
