@@ -9,10 +9,7 @@ export interface PickUpCardProps {
 
 export default function PickUpCardPresentation({ ...props }: PickUpCardProps) {
   return (
-    <div
-      onClick={() => props.onOpenModal(props.image)}
-      className={` h-[600px] w-full bg-[#2B2B2B] px-10 pb-12 pt-10`}
-    >
+    <div className={` h-[600px] w-full bg-[#2B2B2B] px-10 pb-12 pt-10`}>
       <h3 className='text-left font-sans text-xl font-bold'>{props.title}</h3>
 
       <div className='my-9 size-[408px]'>
@@ -22,6 +19,7 @@ export default function PickUpCardPresentation({ ...props }: PickUpCardProps) {
           width={props.image.width}
           height={props.image.height}
           className='size-full hover:cursor-pointer'
+          onClick={() => props.onOpenModal(props.image)}
         />
       </div>
       <p className='font-sans text-sm'>{props.text}</p>
