@@ -18,7 +18,7 @@ export function MenuCardPresentation({ ...props }: MenuCardProps) {
         className={`relative flex h-[352px] w-[528px] items-center justify-center ${props.bgImage}`}
       >
         <div className='absolute inset-0 bg-[#000000]/50' />
-        <div className='absolute left-4 top-5 flex items-start justify-center gap-2 '>
+        <div className='absolute left-4 top-5 flex items-center justify-center gap-2 '>
           {props.stanps.length > 1
             ? props.stanps.map((stanp, index) => {
                 if (index + 1 !== props.stanps.length) {
@@ -58,8 +58,8 @@ export function MenuCardPresentation({ ...props }: MenuCardProps) {
                 );
               })}
         </div>
-        <div className='absolute text-center'>
-          <h3 className='font-bebas text-[46px] text-white '>
+        <div className=' absolute text-center leading-none'>
+          <h3 className=' font-condensed text-[46px] text-white '>
             {props.cardTitles.map((cartTitle) => {
               return (
                 <>
@@ -69,7 +69,7 @@ export function MenuCardPresentation({ ...props }: MenuCardProps) {
               );
             })}
           </h3>
-          <p className=' mt-2 text-[16px] font-semibold'>{props.cardText}</p>
+          <p className=' mt-7 text-[16px] font-semibold'>{props.cardText}</p>
         </div>
       </div>
       <div className='mt-11 text-center'>

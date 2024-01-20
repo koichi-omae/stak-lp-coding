@@ -32,14 +32,15 @@ export default function MenuContainer() {
           {
             src: CardDownLoadImage,
             alt: 'download',
-            width: 40,
+            width: 34,
             height: 40,
           },
           {
             src: CardLogoImage,
             alt: 'logo',
-            width: 40,
+            width: 39,
             height: 40,
+            className: 'mt-auto',
           },
         ],
         bgImage: 'bg-card-menu-pattern1',
@@ -55,7 +56,7 @@ export default function MenuContainer() {
           {
             src: CardDownLoadImage,
             alt: 'download',
-            width: 40,
+            width: 34,
             height: 40,
           },
         ],
