@@ -15,7 +15,7 @@ function MenuPresentation({ ...props }: MenuProps) {
       <p className='mt-5 text-center'>{props.text}</p>
       <div className='mt-16 flex items-center justify-center gap-11'>
         {props.cards.map((card, index) => {
-          return <MenuCardPresentation key={index} {...card} />;
+          return <MenuCardPresentation key={card.bgImage + index} {...card} />;
         })}
       </div>
     </div>
@@ -31,16 +31,15 @@ export default function MenuContainer() {
         stanps: [
           {
             src: CardDownLoadImage,
-            alt: 'download',
+            alt: 'card-download-1',
             width: 34,
             height: 40,
           },
           {
             src: CardLogoImage,
-            alt: 'logo',
+            alt: 'card-logo',
             width: 39,
             height: 40,
-            className: 'mt-auto',
           },
         ],
         bgImage: 'bg-card-menu-pattern1',
@@ -55,7 +54,7 @@ export default function MenuContainer() {
         stanps: [
           {
             src: CardDownLoadImage,
-            alt: 'download',
+            alt: 'card-download-2',
             width: 34,
             height: 40,
           },

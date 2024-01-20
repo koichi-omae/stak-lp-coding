@@ -23,21 +23,16 @@ export default function InfluenceCardPresentation({ ...props }: InfluenceCardPro
         {props.titles.map((title, index) => {
           if (title === 'B.LEAGUEチャンネル') {
             return (
-              <>
-                <span key={title} className=' text-sm font-normal text-[#CECECE] '>
-                  {title}
-                </span>
-                <br />
-              </>
+              <span key={title} className=' text-sm font-normal text-[#CECECE] '>
+                {title} <br />
+              </span>
             );
           } else {
             return (
-              <>
-                <span key={title} className='text-xl font-bold'>
-                  {title}
-                </span>
+              <span key={title} className='text-xl font-bold'>
+                {title}
                 <br />
-              </>
+              </span>
             );
           }
         })}

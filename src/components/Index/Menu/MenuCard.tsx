@@ -19,34 +19,21 @@ export function MenuCardPresentation({ ...props }: MenuCardProps) {
       >
         <div className='absolute inset-0 bg-[#000000]/50' />
         <div className='absolute left-4 top-5 flex items-center justify-center gap-2 '>
-          {props.stanps.length > 1
-            ? props.stanps.map((stanp, index) => {
-                if (index + 1 !== props.stanps.length) {
-                  return (
-                    <>
-                      <Image
-                        key={stanp.alt}
-                        src={stanp.src}
-                        alt={stanp.alt}
-                        width={stanp.width}
-                        height={stanp.height}
-                      />
-                      <span className='text-3xl'>×</span>
-                    </>
-                  );
-                } else {
-                  return (
+          {props.stanps.length > 1 ? (
+            props.stanps.map((stanp, index) => {
+              if (index + 1 !== props.stanps.length) {
+                return (
+                  <div key={stanp.alt} className='flex items-center gap-2'>
                     <Image
-                      key={stanp.alt}
                       src={stanp.src}
                       alt={stanp.alt}
                       width={stanp.width}
                       height={stanp.height}
                     />
-                  );
-                }
-              })
-            : props.stanps.map((stanp, index) => {
+                    <span className='text-3xl'>×</span>
+                  </div>
+                );
+              } else {
                 return (
                   <Image
                     key={stanp.alt}
@@ -56,20 +43,30 @@ export function MenuCardPresentation({ ...props }: MenuCardProps) {
                     height={stanp.height}
                   />
                 );
-              })}
+              }
+            })
+          ) : (
+            <Image
+              key={props.stanps[0].alt}
+              src={props.stanps[0].src}
+              alt={props.stanps[0].alt}
+              width={props.stanps[0].width}
+              height={props.stanps[0].height}
+            />
+          )}
         </div>
-        <div className=' absolute text-center leading-none'>
-          <h3 className=' font-condensed text-[46px] text-white '>
+        <div className='absolute text-center leading-none'>
+          <h3 className='font-condensed text-[46px] text-white '>
             {props.cardTitles.map((cartTitle) => {
               return (
-                <>
-                  <span key={cartTitle}>{cartTitle}</span>
+                <span key={cartTitle + props.cardText}>
+                  {cartTitle}
                   <br />
-                </>
+                </span>
               );
             })}
           </h3>
-          <p className=' mt-7 text-[16px] font-semibold'>{props.cardText}</p>
+          <p className='mt-7 text-[16px] font-semibold'>{props.cardText}</p>
         </div>
       </div>
       <div className='mt-11 text-center'>

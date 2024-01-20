@@ -13,7 +13,7 @@ export default function InfluencePresentation({ ...props }: InfluenceProps) {
           <h3 className='text-left text-2xl font-bold'>{props.title}</h3>
           <div className='mt-10 grid grid-cols-3 gap-7'>
             {props.cards.map((card, index) => {
-              return <InfluenceCardPresentation key={index} {...card} />;
+              return <InfluenceCardPresentation key={index + card.text.unit} {...card} />;
             })}
           </div>
         </div>
