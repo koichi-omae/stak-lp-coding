@@ -5,6 +5,7 @@ import FeatureContainer from '@/components/Index/Feature/Feature';
 import HeroContainer from '@/components/Index/Hero/Hero';
 import MenuContainer from '@/components/Index/Menu/Menu';
 import MeritContainer from '@/components/Index/Merit/Merit';
+import PickUpContainer from '@/components/Index/PickUp/PickUp';
 
 export default function Home() {
   return (
@@ -15,6 +16,7 @@ export default function Home() {
         <MenuContainer />
         <FeatureContainer />
         <MeritContainer />
+        <PickUpContainer />
         <DataContainer />
       </div>
       <PageFooterContainer />
