@@ -21,6 +21,7 @@ const config: Config = {
         'hero-pattern': "url('/img/hero-bg.png')",
         'card-menu-pattern1': "url('/img/menu-card-1.png')",
         'card-menu-pattern2': "url('/img/menu-card-2.png')",
+        'pickup-pattern': "url('/img/bg-pick-up.png')",
       },
     },
   },
