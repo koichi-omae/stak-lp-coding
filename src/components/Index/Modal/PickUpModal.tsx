@@ -13,7 +13,10 @@ interface PickUpModalProps {
 function PickUpModalPresentation({ ...props }: PickUpModalProps) {
   return (
     props.isOpen && (
-      <div className='fixed left-0 top-0 z-10  h-screen w-full  bg-[#181818]/80'>
+      <div
+        className='fixed left-0 top-0 z-10  h-screen w-full  bg-[#181818]/80'
+        onClick={props.onClose}
+      >
         <div className='text-right'>
           <Image
             className='ml-auto mr-9 mt-9 hover:cursor-pointer'
@@ -24,7 +27,12 @@ function PickUpModalPresentation({ ...props }: PickUpModalProps) {
             onClick={props.onClose}
           />
         </div>
-        <div className='absolute inset-0 m-auto  h-[600px] w-[800px]'>
+        <div
+          className='absolute inset-0 m-auto  h-[600px] w-[800px]'
+          onClick={(e) => {
+            e.stopPropagation();
+          }}
+        >
           <Image
             src={props.imgae.src}
             alt={props.imgae.alt}
