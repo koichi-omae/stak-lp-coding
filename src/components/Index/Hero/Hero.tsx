@@ -8,7 +8,7 @@ function HeroPresentation({ ...props }: HeroProps) {
   return (
     <div className='relative flex h-[656px] w-full items-center justify-center bg-hero-pattern bg-cover'>
       <div className='absolute inset-0 bg-[#000000]/50' />
-      <h2 className='absolute font-bebas text-[46px] text-white'>{props.title}</h2>
+      <h2 className='absolute font-bebas text-[46px] tracking-wide text-white'>{props.title}</h2>
     </div>
   );
 }
