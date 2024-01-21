@@ -16,7 +16,7 @@ export default function Home() {
     <RecoilRoot>
       <PageHeaderContainer />
       <HeroContainer />
-      <div className='bg-[#181818] pb-56  pt-24 text-center text-white'>
+      <div className='bg-[#181818] pb-56  pt-44 text-center text-white'>
         <MenuContainer />
         <FeatureContainer />
         <MeritContainer />
